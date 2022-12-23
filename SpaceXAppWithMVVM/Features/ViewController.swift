@@ -8,10 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    let service: SpaceXProtocol = SpaceXService()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        service.fetchAllDatas { model in
+            print(model)
+        } onFail: { error in
+            print(error)
+        }
+
     }
 
 

@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - PostModel
-struct PostModel {
+struct PostModel: Codable {
     let flightNumber: Int?
     let missionName: String?
     let launchYear: String?
@@ -16,4 +16,15 @@ struct PostModel {
     let rocket: RocketModel?
     let links: LinksModel?
     let details: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case flightNumber = "flight_number"
+        case missionName = "mission_name"
+        case launchYear = "launch_year"
+        case launchDateUTC = "launch_date_utc"
+        case rocket = "rocket"
+        case links = "links"
+        case details = "details"
+    }
+    
 }

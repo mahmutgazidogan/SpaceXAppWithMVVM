@@ -8,7 +8,12 @@
 import Foundation
 
 // MARK: - Links
-struct LinksModel {
+struct LinksModel: Codable {
     let missionPatch: String?
     let missionPatchSmall: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case missionPatch = "mission_patch"
+        case missionPatchSmall = "mission_patch_small"
+    }
 }
